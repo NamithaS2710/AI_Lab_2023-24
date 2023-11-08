@@ -1,6 +1,6 @@
 # Ex.No: 7  Logic Programming –  Logic Circuit Design
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 02.09.2023                                                                           
+### REGISTER NUMBER : 212221040110
 ### AIM: 
 To write a logic program to design a circuit like half adder and half subtractor.
 ###  Algorithm:
@@ -14,7 +14,42 @@ To write a logic program to design a circuit like half adder and half subtractor
 8. Stop the program.
 
 ### Program:
-
+```
+# Define logic gate functions
+def AND_gate(a, b):
+return a & b
+def OR_gate(a, b):
+return a | b
+def XOR_gate(a, b):
+return a ^ b
+def NOT_gate(a):
+return ~a & 1
+# Half Adder
+def half_adder(a, b):
+sum_bit = XOR_gate(a, b)
+carry_out = AND_gate(a, b)
+return sum_bit, carry_out
+# Half Subtractor
+def half_subtractor(a, b):
+difference = XOR_gate(a, b)
+borrow_out = AND_gate(NOT_gate(a), b)
+return difference, borrow_out
+# Test the logic
+# Half Adder test
+print("Half Adder Test:")
+a = 1
+b = 1
+sum_bit, carry_out = half_adder(a, b)
+print(f"Input A: {a}, Input B: {b}")
+print(f"Sum: {sum_bit}, Carry Out: {carry_out}")
+# Half Subtractor test
+print("\nHalf Subtractor Test:")
+a = 1
+b = 0
+difference, borrow_out = half_subtractor(a, b)
+print(f"Input A: {a}, Input B: {b}")
+print(f"Difference: {difference}, Borrow Out: {borrow_out}")
+```
 
 
 
@@ -26,6 +61,7 @@ To write a logic program to design a circuit like half adder and half subtractor
 
 
 ### Output:
+![image](https://github.com/NamithaS2710/AI_Lab_2023-24/assets/133190822/c913614c-0a08-45d4-a106-89bb2b3b335d)
 
 
 
